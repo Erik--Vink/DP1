@@ -14,6 +14,6 @@ public interface Node {
 
     void setNextNodes(ArrayList<Node> nextNodes);
 
-
+    Node copy();
 
 }

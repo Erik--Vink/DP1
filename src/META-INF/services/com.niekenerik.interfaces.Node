@@ -1,0 +1,8 @@
+com.niekenerik.components.AND
+com.niekenerik.components.IN
+com.niekenerik.components.NAND
+com.niekenerik.components.NOR
+com.niekenerik.components.NOT
+com.niekenerik.components.OR
+com.niekenerik.components.OUT
+com.niekenerik.components.XOR

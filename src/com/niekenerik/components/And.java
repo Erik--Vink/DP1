@@ -4,11 +4,11 @@ import com.niekenerik.interfaces.Node;
 
 import java.util.ArrayList;
 
-public class And implements Node {
+public class AND implements Node {
 
     @Override
     public Integer calculate(int input) {
-        return -1;
+        return 99;
     }
 
     @Override
@@ -19,5 +19,10 @@ public class And implements Node {
     @Override
     public void setNextNodes(ArrayList<Node> nextNodes) {
 
+    }
+
+    @Override
+    public Node copy() {
+        return new AND();
     }
 }

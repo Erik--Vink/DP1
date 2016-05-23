@@ -5,7 +5,7 @@ import com.niekenerik.interfaces.Node;
 import java.util.ArrayList;
 
 
-public class Out  implements Node {
+public class OUT implements Node {
     @Override
     public Integer calculate(int input) {
         return -1;
@@ -19,5 +19,10 @@ public class Out  implements Node {
     @Override
     public void setNextNodes(ArrayList<Node> nextNodes) {
 
+    }
+
+    @Override
+    public Node copy() {
+        return new OUT();
     }
 }

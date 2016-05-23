@@ -4,10 +4,7 @@ import com.niekenerik.interfaces.Node;
 
 import java.util.ArrayList;
 
-/**
- * Created by niek on 23-5-2016.
- */
-public class Nand implements Node {
+public class NAND implements Node {
 
     @Override
     public Integer calculate(int input) {
@@ -22,5 +19,10 @@ public class Nand implements Node {
     @Override
     public void setNextNodes(ArrayList<Node> nextNodes) {
 
+    }
+
+    @Override
+    public Node copy() {
+        return new NAND();
     }
 }
