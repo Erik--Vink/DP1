@@ -1,9 +1,10 @@
 package com.niekenerik.interfaces;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public interface UiObserver {
 
-    void update(ArrayList<Node> nodes);
+    void update(HashMap<String,Node> nodes);
 
 }

@@ -23,6 +23,8 @@ public class CircuitController {
 
     public void start(){
         setup();
+
+        gameLoop();
     }
 
     private void setup(){
@@ -33,19 +35,28 @@ public class CircuitController {
             circuitBuilder.addNodes(fileReader.getNodes());
             circuitBuilder.addNodeLinks(fileReader.getNodeLinks());
             circuitBuilder.build();
+            attach(new CircuitDrawer());
         } else {
             outputDrawer.drawLine("File kon niet ingelezen worden");
             start();
         }
-
-
     }
 
-    private void attach(){
+    private void gameLoop(){
+        Boolean done = false;
+        while(!done){
+            done = circuit.callNodes();
+            notifyAllObservers();
+        }
+    }
 
+    private void attach(UiObserver observer){
+        uiObservers.add(observer);
     }
 
     private void notifyAllObservers(){
-
+        for(UiObserver observer: uiObservers){
+            observer.update(circuit.getNodes());
+        }
     }
 }

@@ -11,7 +11,13 @@ public class Circuit {
     private HashMap<String, ArrayList<Node>> nodeLinks;
     private HashMap<String, Node> nodes;
 
-    public void callNodes(){
+    public Boolean callNodes(){
 
+
+        return false;
+    }
+
+    public HashMap<String, Node> getNodes() {
+        return nodes;
     }
 }
