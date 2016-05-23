@@ -23,7 +23,7 @@ public class FileReader {
         return nodeLinks;
     }
 
-    public void readFile(String naam){
+    public Boolean readFile(String naam){
         boolean node = false;
         boolean nodeLink = false;
         InputStream fis =  FileReader.class.getResourceAsStream("testFiles/" + naam);
@@ -60,11 +60,12 @@ public class FileReader {
 
                 }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            return false;
         }
 
         System.out.println("file ingelezen");
+        return true;
     }
 
     public ArrayList<String> getFileNames(String path){
