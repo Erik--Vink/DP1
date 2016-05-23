@@ -3,7 +3,8 @@ package com.niekenerik;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-        System.out.println("Hello world");
+        System.out.println("Start application");
+        CircuitController controller = new CircuitController();
+        controller.start();
     }
 }
