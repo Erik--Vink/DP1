@@ -9,6 +9,8 @@ public class NOR implements Node {
     private Integer inputA = -1;
     private Integer inputB = -1;
 
+    private Integer output =0;
+
     @Override
     public Integer calculate(int input) {
         if(inputA  == -1){
@@ -18,10 +20,17 @@ public class NOR implements Node {
         }
 
         if((inputA + inputB) == 0 || (inputA + inputB) == -2){
-            return 1;
+            output = 1;
         } else {
-            return 0;
+            output = 0;
         }
+
+        return output;
+    }
+
+    @Override
+    public Integer getOutput() {
+        return output;
     }
 
     @Override

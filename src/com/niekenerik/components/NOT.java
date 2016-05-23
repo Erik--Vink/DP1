@@ -7,15 +7,25 @@ import java.util.ArrayList;
 public class NOT implements Node {
 
     private Integer input =0;
+
+    private Integer output =0;
+
     @Override
     public Integer calculate(int input) {
         this.input = input;
 
         if(input == 1){
-            return 0;
+            output =  0;
         } else {
-            return -1;
+            output = -1;
         }
+
+        return output;
+    }
+
+    @Override
+    public Integer getOutput() {
+        return output;
     }
 
     @Override

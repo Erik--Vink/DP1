@@ -7,10 +7,18 @@ import java.util.ArrayList;
 
 public class OUT implements Node {
     private Integer waarde;
+    private Integer output;
+
     @Override
     public Integer calculate(int input) {
         waarde = input;
-        return -1;
+        output = -1;
+        return output;
+    }
+
+    @Override
+    public Integer getOutput() {
+        return output;
     }
 
     @Override
