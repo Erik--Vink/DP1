@@ -6,10 +6,22 @@ import java.util.ArrayList;
 
 public class AND implements Node {
 
+    private Integer inputA = -1;
+    private Integer inputB = -1;
 
     @Override
     public Integer calculate(int input) {
-        return 99;
+        if(inputA  == -1){
+            inputA = input;
+        } else {
+            inputB = input;
+        }
+
+        if((inputA + inputB) == 2){
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
     @Override

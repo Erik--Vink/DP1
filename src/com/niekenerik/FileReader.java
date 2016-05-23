@@ -63,8 +63,6 @@ public class FileReader {
         } catch (Exception e) {
             return false;
         }
-
-        System.out.println("file ingelezen");
         return true;
     }
 
