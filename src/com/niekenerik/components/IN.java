@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class IN implements Node {
     @Override
     public Integer calculate(int input) {
-        return -1;
+        return input;
     }
 
     @Override

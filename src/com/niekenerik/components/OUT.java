@@ -6,8 +6,10 @@ import java.util.ArrayList;
 
 
 public class OUT implements Node {
+    private Integer waarde;
     @Override
     public Integer calculate(int input) {
+        waarde = input;
         return -1;
     }
 
