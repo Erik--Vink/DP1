@@ -1,5 +1,5 @@
 package com.niekenerik.interfaces;
 
-public class UiObserver {
+public interface UiObserver {
 
 }
