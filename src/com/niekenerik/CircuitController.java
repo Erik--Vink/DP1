@@ -31,12 +31,16 @@ public class CircuitController {
         outputDrawer.drawLine("Welkom bij dp1 eind opdracht");
         outputDrawer.drawLine("Selecteer het circuit");
         outputDrawer.drawList(fileReader.getFileNames("testFiles"));
-        fileReader.readFile(inputReader.readInput());
-        fileReader.readFile("circuit1.txt");
+        if(fileReader.readFile(inputReader.readInput())){
+            circuitBuilder.addNodes(fileReader.getNodes());
+            circuitBuilder.addNodeLinks(fileReader.getNodeLinks());
+            circuitBuilder.build();
+        } else {
+            outputDrawer.drawLine("File kon niet ingelezen worden");
+            start();
+        }
 
-        circuitBuilder.addNodes(fileReader.getNodes());
-        circuitBuilder.addNodeLinks(fileReader.getNodeLinks());
-        circuitBuilder.build();
+
     }
 
     private void attach(){
