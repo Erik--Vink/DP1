@@ -8,7 +8,12 @@ public interface Node {
     ArrayList<Node> nextNodes = new ArrayList<Node>();
     Integer output =0;
 
-    void caculate(int input);
+    Integer calculate(int input);
+
+    ArrayList<Node> getNextNodes();
+
+    void setNextNodes(ArrayList<Node> nextNodes);
+
 
 
 }
