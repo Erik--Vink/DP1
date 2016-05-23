@@ -19,9 +19,9 @@ public class NodeFactory {
         }
     }
 
-    public static final Node create(final String name) {
-        if (nodes.containsKey(name)) {
-            return nodes.get(name).copy();
+    public static final Node create(final String type, String name) {
+        if (nodes.containsKey(type)) {
+            return nodes.get(type).copy(name);
         }
 
         final String message = String.format("Node '%s' was not found, is the services file up to date?", name);
