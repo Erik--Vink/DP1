@@ -62,4 +62,17 @@ public class FileReader {
         System.out.println("file ingelezen");
     }
 
+    public ArrayList<String> getFileNames(String path){
+        File folder = new File(FileReader.class.getResource("").getPath() + path);
+        File[] listOfFiles = folder.listFiles();
+        ArrayList<String> fileNames = new ArrayList<>();
+        for (File listOfFile : listOfFiles) {
+            if (listOfFile.isFile()) {
+                fileNames.add(listOfFile.getName());
+            }
+        }
+
+        return fileNames;
+    }
+
 }
