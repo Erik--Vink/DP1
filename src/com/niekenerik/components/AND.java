@@ -4,14 +4,15 @@ import com.niekenerik.interfaces.Node;
 
 import java.util.ArrayList;
 
-public class AND implements Node {
+public class AND extends Node {
 
     private Integer inputA = -1;
     private Integer inputB = -1;
 
-    private Integer output = 0;
+    public AND(String name){
+        super(name);
+    }
 
-    @Override
     public Integer calculate(int input) {
         if(inputA  == -1){
             inputA = input;
@@ -24,21 +25,16 @@ public class AND implements Node {
         }
 
         if((inputA + inputB) == 2){
-            output = 1;
+            setOutput(1);
         } else {
-            output = 0;
+            setOutput(0);
         }
 
-        return output;
+        return getOutput();
     }
 
     @Override
-    public Integer getOutput() {
-        return output;
-    }
-
-    @Override
-    public Node copy() {
-        return new AND();
+    public Node copy(String name) {
+        return new AND(name);
     }
 }

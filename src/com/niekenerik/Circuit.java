@@ -19,6 +19,7 @@ public class Circuit {
         this.toCallNodes = toCallNodes;
     }
 
+
     public Boolean callNodes(){
         System.out.println("callNodes");
 
@@ -27,7 +28,7 @@ public class Circuit {
         for(String nodeName : toCallNodes){
             Integer value = nodes.get(nodeName).getOutput();
             for(Node node: nodeLinks.get(nodeName)){
-                if(node.calculate(value) != -1){
+                if(node.calculate(value) > -1){
                     toCallNodesNext.add(nodeName);
                 }
             }
@@ -36,9 +37,9 @@ public class Circuit {
         toCallNodes = toCallNodesNext;
 
         if(toCallNodesNext.size() == 0 ){
-            return false;
+            return true;
         } else {
-             return true;
+            return false;
         }
 
     }

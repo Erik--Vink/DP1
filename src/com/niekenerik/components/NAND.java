@@ -4,12 +4,14 @@ import com.niekenerik.interfaces.Node;
 
 import java.util.ArrayList;
 
-public class NAND implements Node {
+public class NAND extends Node {
 
     private Integer inputA = -1;
     private Integer inputB = -1;
 
-    private Integer output =0;
+    public NAND(String name){
+        super(name);
+    }
 
     @Override
     public Integer calculate(int input) {

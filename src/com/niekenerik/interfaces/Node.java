@@ -1,11 +1,26 @@
 package com.niekenerik.interfaces;
 
 
-public interface Node {
+public abstract class Node {
+    private String name;
+    private Integer output;
 
-    Integer calculate(int input);
+    public abstract Integer calculate(int input);
+    public abstract Node copy(String name);
 
-    Integer getOutput();
+    public Node(String name){
+        this.name = name;
+    }
 
-    Node copy();
+    public Integer getOutput() {
+        return output;
+    }
+
+    public void setOutput(Integer output) {
+        this.output = output;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

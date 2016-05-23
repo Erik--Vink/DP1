@@ -4,23 +4,19 @@ import com.niekenerik.interfaces.Node;
 
 import java.util.ArrayList;
 
-public class IN implements Node {
+public class IN extends Node {
 
-    private Integer output =0;
+    public IN(String name){
+        super(name);
+    }
 
     @Override
     public Integer calculate(int input) {
-        output = input;
-        return output;
+        setOutput(input);
+        return getOutput();
     }
-
     @Override
-    public Integer getOutput() {
-        return output;
-    }
-
-    @Override
-    public Node copy() {
-        return new IN();
+    public Node copy(String name) {
+        return new IN(name);
     }
 }
