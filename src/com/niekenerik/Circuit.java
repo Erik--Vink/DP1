@@ -20,17 +20,27 @@ public class Circuit {
     }
 
     public Boolean callNodes(){
+        System.out.println("callNodes");
+
         ArrayList<String> toCallNodesNext = new ArrayList<>();
 
         for(String nodeName : toCallNodes){
             Integer value = nodes.get(nodeName).getOutput();
             for(Node node: nodeLinks.get(nodeName)){
-                node.calculate(value);
-                toCallNodesNext.add(nodeName);
+                if(node.calculate(value) != -1){
+                    toCallNodesNext.add(nodeName);
+                }
             }
         }
 
-        return false;
+        toCallNodes = toCallNodesNext;
+
+        if(toCallNodesNext.size() == 0 ){
+            return false;
+        } else {
+             return true;
+        }
+
     }
 
     public HashMap<String, Node> getNodes() {

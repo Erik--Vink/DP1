@@ -19,6 +19,10 @@ public class NAND implements Node {
             inputB = input;
         }
 
+        if(inputA == -1 || inputB == -1){
+            return -1;
+        }
+
         if((inputA + inputB) == 2){
             output= 0;
         } else {

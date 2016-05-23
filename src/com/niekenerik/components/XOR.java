@@ -17,6 +17,10 @@ public class XOR implements Node {
             inputB = input;
         }
 
+        if(inputA == -1 || inputB == -1){
+            return -1;
+        }
+
         if(inputA  != inputB  && (inputA + inputB) == -1){
             output = 1;
         } else {
