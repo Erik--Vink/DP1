@@ -32,13 +32,11 @@ public class CircuitController {
         if(fileReader.readFile(inputReader.readInput())){
             circuitBuilder.addNodes(fileReader.getNodes());
             circuitBuilder.addNodeLinks(fileReader.getNodeLinks());
-            circuitBuilder.build();
+            this.circuit = circuitBuilder.build();
         } else {
             outputDrawer.drawLine("File kon niet ingelezen worden");
             start();
         }
-
-
     }
 
     private void attach(){
