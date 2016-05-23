@@ -24,7 +24,7 @@ public class NodeFactory {
             return nodes.get(type).copy(name);
         }
 
-        final String message = String.format("Node '%s' was not found, is the services file up to date?", name);
+        final String message = String.format("Node '%s' was not found, is the services file up to date?", type);
         throw new IllegalArgumentException(message);
     }
 }

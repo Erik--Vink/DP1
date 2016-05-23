@@ -5,10 +5,13 @@ import com.niekenerik.interfaces.Node;
 import java.util.ArrayList;
 
 
-public class OR implements Node {
+public class OR extends Node {
     private Integer inputA = -1;
     private Integer inputB = -1;
-    private Integer output = 0;
+
+    public OR(String name){
+        super(name);
+    }
 
     @Override
     public Integer calculate(int input) {
@@ -23,21 +26,16 @@ public class OR implements Node {
         }
 
         if(inputA == 1 || inputB == 1){
-            output =  1;
+            setOutput(1);
         } else {
-            output = 0;
+            setOutput(0);
         }
 
-        return output;
+        return getOutput();
     }
 
     @Override
-    public Integer getOutput() {
-        return output;
-    }
-
-    @Override
-    public Node copy() {
-        return new OR();
+    public Node copy(String name) {
+        return new OR(name);
     }
 }

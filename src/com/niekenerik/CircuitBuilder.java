@@ -40,21 +40,21 @@ public class CircuitBuilder {
                     case "INPUT_HIGH" :
                         value = "IN";
                         toCallNodes.add(key);
-                        node = NodeFactory.create(value);
+                        node = NodeFactory.create(value,key);
                         node.calculate(1);
                         break;
                     case "INPUT_LOW" :
                         value = "IN";
                         toCallNodes.add(key);
-                        node = NodeFactory.create(value);
+                        node = NodeFactory.create(value,key);
                         node.calculate(0);
                         break;
                     case "PROBE" :
                         value = "OUT";
-                        node = NodeFactory.create(value);
+                        node = NodeFactory.create(value,key);
                         break;
                     default:
-                        node = NodeFactory.create(value);
+                        node = NodeFactory.create(value,key);
                         break;
                 }
                 this.nodes.put(key, node);

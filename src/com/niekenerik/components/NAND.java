@@ -26,21 +26,17 @@ public class NAND extends Node {
         }
 
         if((inputA + inputB) == 2){
-            output= 0;
+            setOutput(0);
         } else {
-            output= 1;
+            setOutput(1);
         }
 
-        return output;
+        return getOutput();
     }
 
-    @Override
-    public Integer getOutput() {
-        return output;
-    }
 
     @Override
-    public Node copy() {
-        return new NAND();
+    public Node copy(String name) {
+        return new NAND(name);
     }
 }

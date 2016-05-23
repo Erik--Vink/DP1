@@ -5,11 +5,13 @@ import com.niekenerik.interfaces.Node;
 import java.util.ArrayList;
 
 
-public class NOR implements Node {
+public class NOR extends Node {
     private Integer inputA = -1;
     private Integer inputB = -1;
 
-    private Integer output =0;
+    public NOR(String name){
+        super(name);
+    }
 
     @Override
     public Integer calculate(int input) {
@@ -24,21 +26,17 @@ public class NOR implements Node {
         }
 
         if((inputA + inputB) == 0 || (inputA + inputB) == -2){
-            output = 1;
+            setOutput(1);
         } else {
-            output = 0;
+            setOutput(0);
         }
 
-        return output;
+        return getOutput();
     }
 
-    @Override
-    public Integer getOutput() {
-        return output;
-    }
 
     @Override
-    public Node copy() {
-        return new NOR();
+    public Node copy(String name) {
+        return new NOR(name);
     }
 }

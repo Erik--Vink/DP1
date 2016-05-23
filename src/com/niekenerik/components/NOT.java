@@ -4,32 +4,27 @@ import com.niekenerik.interfaces.Node;
 
 import java.util.ArrayList;
 
-public class NOT implements Node {
+public class NOT extends Node {
 
-    private Integer input =0;
-
-    private Integer output =0;
+    public NOT(String name){
+        super(name);
+    }
 
     @Override
     public Integer calculate(int input) {
-        this.input = input;
 
         if(input == 1){
-            output =  0;
+            setOutput(0);
         } else {
-            output = -1;
+            setOutput(1);
         }
 
-        return output;
+        return getOutput();
     }
 
-    @Override
-    public Integer getOutput() {
-        return output;
-    }
 
     @Override
-    public Node copy() {
-        return new NOT();
+    public Node copy(String name) {
+        return new NOT(name);
     }
 }

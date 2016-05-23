@@ -5,24 +5,20 @@ import com.niekenerik.interfaces.Node;
 import java.util.ArrayList;
 
 
-public class OUT implements Node {
-    private Integer waarde;
-    private Integer output;
+public class OUT extends Node {
+
+    public OUT(String name){
+        super(name);
+    }
 
     @Override
     public Integer calculate(int input) {
-        waarde = input;
-        output = -1;
-        return output;
+        setOutput(input);
+        return -1;
     }
 
     @Override
-    public Integer getOutput() {
-        return output;
-    }
-
-    @Override
-    public Node copy() {
-        return new OUT();
+    public Node copy(String name) {
+        return new OUT(name);
     }
 }
