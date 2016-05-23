@@ -11,6 +11,12 @@ public class Circuit {
     private HashMap<String, ArrayList<Node>> nodeLinks;
     private HashMap<String, Node> nodes;
 
+    public Circuit(HashMap<String, Node> nodes, HashMap<String, ArrayList<Node>> nodeLinks, HashMap<String, Node> toCallNodes){
+        this.nodes = nodes;
+        this.nodeLinks = nodeLinks;
+        this.toCallNodes = toCallNodes;
+    }
+
     public Boolean callNodes(){
 
 

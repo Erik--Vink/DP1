@@ -36,6 +36,7 @@ public class CircuitController {
             circuitBuilder.addNodeLinks(fileReader.getNodeLinks());
             circuitBuilder.build();
             attach(new CircuitDrawer());
+            this.circuit = circuitBuilder.build();
         } else {
             outputDrawer.drawLine("File kon niet ingelezen worden");
             start();
