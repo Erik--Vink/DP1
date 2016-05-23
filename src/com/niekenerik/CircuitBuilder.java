@@ -35,15 +35,29 @@ public class CircuitBuilder {
             for(Map.Entry<String, String> entry : nodesList.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if((value.equals("INPUT_HIGH")) || (value.equals("INPUT_LOW"))){
-                    value = "IN";
-                    toCallNodes.add(key);
-                    //todo roep constructor met 1 of 0 aan afhankelijk van low/high
+                Node node;
+                switch (value){
+                    case "INPUT_HIGH" :
+                        value = "IN";
+                        toCallNodes.add(key);
+                        node = NodeFactory.create(value);
+                        node.calculate(1);
+                        break;
+                    case "INPUT_LOW" :
+                        value = "IN";
+                        toCallNodes.add(key);
+                        node = NodeFactory.create(value);
+                        node.calculate(0);
+                        break;
+                    case "PROBE" :
+                        value = "OUT";
+                        node = NodeFactory.create(value);
+                        break;
+                    default:
+                        node = NodeFactory.create(value);
+                        break;
                 }
-                else if(value.equals("PROBE")){
-                    value = "OUT";
-                }
-                this.nodes.put(key, NodeFactory.create(value));
+                this.nodes.put(key, node);
             }
 
             this.setLinks();
