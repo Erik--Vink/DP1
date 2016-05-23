@@ -28,7 +28,7 @@ public class CircuitBuilder {
 
     public Circuit build(){
         //Roep factory create method aan voor iedere node in nodeList
-        HashMap<String, Node> toCallNodes = new HashMap<>();
+        ArrayList<String> toCallNodes = new ArrayList<>();
 
         try
         {
@@ -37,7 +37,7 @@ public class CircuitBuilder {
                 String value = entry.getValue();
                 if((value.equals("INPUT_HIGH")) || (value.equals("INPUT_LOW"))){
                     value = "IN";
-                    toCallNodes.put(key, NodeFactory.create(value));
+                    toCallNodes.add(key);
                     //todo roep constructor met 1 of 0 aan afhankelijk van low/high
                 }
                 else if(value.equals("PROBE")){
