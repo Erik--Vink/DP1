@@ -12,16 +12,6 @@ public class NAND implements Node {
     }
 
     @Override
-    public ArrayList<Node> getNextNodes() {
-        return null;
-    }
-
-    @Override
-    public void setNextNodes(ArrayList<Node> nextNodes) {
-
-    }
-
-    @Override
     public Node copy() {
         return new NAND();
     }

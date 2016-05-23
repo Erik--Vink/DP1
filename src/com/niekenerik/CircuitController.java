@@ -4,8 +4,6 @@ import com.niekenerik.interfaces.Node;
 import com.niekenerik.interfaces.UiObserver;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class CircuitController {
     private CircuitBuilder circuitBuilder;
