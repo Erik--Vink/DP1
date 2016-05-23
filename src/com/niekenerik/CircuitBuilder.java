@@ -9,14 +9,14 @@ import java.util.Map;
 public class CircuitBuilder {
 
     private HashMap<String, Node> nodes;
-    private HashMap<String, String> nodeLinks;
+    private HashMap<String, ArrayList<String>> nodeLinks;
     private HashMap<String, String> nodesList;
 
     public void addNodes(HashMap<String, String> nodes){
         this.nodesList = nodes;
     }
 
-    public void addNodeLinks(HashMap<String, String> nodeLinks){
+    public void addNodeLinks(HashMap<String, ArrayList<String>> nodeLinks){
         this.nodeLinks = nodeLinks;
     }
     public void build(){

@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class FileReader {
 
     private HashMap<String, String> nodes;
-    private HashMap<String, String> nodeLinks;
+    private HashMap<String, ArrayList<String>> nodeLinks;
 
     public FileReader(){
         nodes = new HashMap<>();
@@ -19,7 +19,7 @@ public class FileReader {
         return nodes;
     }
 
-    public HashMap<String, String> getNodeLinks() {
+    public HashMap<String, ArrayList<String>> getNodeLinks() {
         return nodeLinks;
     }
 
@@ -42,7 +42,12 @@ public class FileReader {
                     } else if(nodeLink) {
                         // de regel bevat een naam van een node en de link
                         String[] part = line.split(":");
-                        nodeLinks.put(part[0], part[1]);
+                        String[] links = part[1].split(",");
+                        ArrayList<String> setLinks = new ArrayList<>();
+                        for(String link : links){
+                            setLinks.add(link);
+                        }
+                        nodeLinks.put(part[0], setLinks);
                     }
                 } else {
                     if(line.contains("Description of all the nodes")){
