@@ -8,12 +8,12 @@ import java.util.ArrayList;
 public class OUT extends Node {
 
     public OUT(String name){
-        super(name);
+        super(name, "OUT");
     }
 
     //constructor met geen parameters om te zorgen dat de service loader de classes kan inladen
     public OUT(){
-        super("");
+        super("", "OUT");
     }
 
     @Override

@@ -7,12 +7,12 @@ import java.util.ArrayList;
 public class NOT extends Node {
 
     public NOT(String name){
-        super(name);
+        super(name,"NOT");
     }
 
     //constructor met geen parameters om te zorgen dat de service loader de classes kan inladen
     public NOT(){
-        super("");
+        super("","NOT");
     }
 
     @Override

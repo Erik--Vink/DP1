@@ -10,12 +10,12 @@ public class NAND extends Node {
     private Integer inputB = -1;
 
     public NAND(String name){
-        super(name);
+        super(name, "NAND");
     }
 
     //constructor met geen parameters om te zorgen dat de service loader de classes kan inladen
     public NAND(){
-        super("");
+        super("","NAND");
     }
 
     @Override

@@ -51,7 +51,12 @@ public class CircuitController extends Simulatie {
     void startSimulation() {
         Boolean done = false;
         while(!done){
-            done = circuit.callNodes();
+            try {
+                done = circuit.callNodes();
+            } catch (SimulationError simulationError) {
+                outputDrawer.printError(simulationError.getMessage());
+                break;
+            }
             notifyAllObservers();
         }
     }

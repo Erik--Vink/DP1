@@ -10,12 +10,12 @@ public class OR extends Node {
     private Integer inputB = -1;
 
     public OR(String name){
-        super(name);
+        super(name,"OR");
     }
 
     //constructor met geen parameters om te zorgen dat de service loader de classes kan inladen
     public OR(){
-        super("");
+        super("","OR");
     }
 
     @Override

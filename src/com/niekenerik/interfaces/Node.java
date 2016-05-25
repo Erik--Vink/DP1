@@ -4,12 +4,14 @@ package com.niekenerik.interfaces;
 public abstract class Node {
     private String name;
     private Integer output;
+    private String type;
 
     public abstract Integer calculate(int input);
     public abstract Node copy(String name);
 
-    public Node(String name){
+    public Node(String name, String type){
         this.name = name;
+        this.type = type;
     }
 
     public Integer getOutput() {
@@ -22,5 +24,9 @@ public abstract class Node {
 
     public String getName() {
         return name;
+    }
+
+    public String getType() {
+        return type;
     }
 }

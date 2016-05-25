@@ -8,6 +8,10 @@ public class OutputDrawer {
         System.out.println(line);
     }
 
+    public void printError(String line){
+        System.out.println("ERROR: " + line);
+    }
+
     public void drawList(ArrayList<String> list){
         for (String item : list) {
             drawLine("- " + item);

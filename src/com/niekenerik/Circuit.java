@@ -13,15 +13,15 @@ public class Circuit {
     private HashMap<String, ArrayList<Node>> nodeLinks;
     private HashMap<String, Node> nodes;
 
+
     public Circuit(HashMap<String, Node> nodes, HashMap<String, ArrayList<Node>> nodeLinks, ArrayList<String> toCallNodes){
         this.nodes = nodes;
         this.nodeLinks = nodeLinks;
         this.toCallNodes = toCallNodes;
     }
 
-
-    public Boolean callNodes(){
-        System.out.println("callNodes");
+    public Boolean callNodes() throws SimulationError {
+        boolean endNodeCalled = false;
 
         ArrayList<String> toCallNodesNext = new ArrayList<>();
 
@@ -30,6 +30,10 @@ public class Circuit {
             for(Node node: nodeLinks.get(nodeName)){
                 if(node.calculate(value) > -1){
                     toCallNodesNext.add(node.getName());
+                }else {
+                    if(node.getType().equals("OUT")){
+                        endNodeCalled = true;
+                    }
                 }
             }
         }
@@ -37,7 +41,11 @@ public class Circuit {
         toCallNodes = toCallNodesNext;
 
         if(toCallNodesNext.size() == 0 ){
-            return true;
+            if(endNodeCalled){
+                return true;
+            }else {
+                throw new SimulationError("Simulation failed");
+            }
         } else {
             return false;
         }

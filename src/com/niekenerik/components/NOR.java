@@ -10,12 +10,12 @@ public class NOR extends Node {
     private Integer inputB = -1;
 
     public NOR(String name){
-        super(name);
+        super(name,"NOR");
     }
 
     //constructor met geen parameters om te zorgen dat de service loader de classes kan inladen
     public NOR(){
-        super("");
+        super("","NOR");
     }
 
     @Override

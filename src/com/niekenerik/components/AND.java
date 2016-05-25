@@ -10,12 +10,12 @@ public class AND extends Node {
     private Integer inputB = -1;
 
     public AND(String name){
-        super(name);
+        super(name,"AND");
     }
 
     //constructor met geen parameters om te zorgen dat de service loader de classes kan inladen
     public AND(){
-        super("");
+        super("", "AND");
     }
 
     public Integer calculate(int input) {

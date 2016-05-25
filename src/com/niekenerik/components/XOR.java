@@ -9,12 +9,12 @@ public class XOR extends Node {
     private Integer inputB = -1;
 
     public XOR(String name){
-        super(name);
+        super(name, "XOR");
     }
 
     //constructor met geen parameters om te zorgen dat de service loader de classes kan inladen
     public XOR(){
-        super("");
+        super("","XOR");
     }
 
     @Override

@@ -7,12 +7,12 @@ import java.util.ArrayList;
 public class IN extends Node {
 
     public IN(String name){
-        super(name);
+        super(name, "IN");
     }
 
     //constructor met geen parameters om te zorgen dat de service loader de classes kan inladen
     public IN(){
-        super("");
+        super("", "IN");
     }
 
     @Override
