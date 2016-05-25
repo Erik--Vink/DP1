@@ -13,6 +13,11 @@ public class AND extends Node {
         super(name);
     }
 
+    //constructor met geen parameters om te zorgen dat de service loader de classes kan inladen
+    public AND(){
+        super("");
+    }
+
     public Integer calculate(int input) {
         if(inputA  == -1){
             inputA = input;

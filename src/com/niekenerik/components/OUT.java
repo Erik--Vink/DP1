@@ -11,6 +11,11 @@ public class OUT extends Node {
         super(name);
     }
 
+    //constructor met geen parameters om te zorgen dat de service loader de classes kan inladen
+    public OUT(){
+        super("");
+    }
+
     @Override
     public Integer calculate(int input) {
         setOutput(input);
