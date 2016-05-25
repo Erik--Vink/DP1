@@ -10,6 +10,6 @@ public class CircuitDrawer implements UiObserver {
 
     @Override
     public void update(HashMap<String, Node> nodes) {
-
+        // TODO: 25-5-2016 teken circuit 
     }
 }
