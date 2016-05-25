@@ -48,6 +48,8 @@ public class CircuitController {
             done = circuit.callNodes();
             notifyAllObservers();
         }
+
+        System.out.println("Done");
     }
 
     private void attach(UiObserver observer){

@@ -29,7 +29,7 @@ public class Circuit {
             Integer value = nodes.get(nodeName).getOutput();
             for(Node node: nodeLinks.get(nodeName)){
                 if(node.calculate(value) > -1){
-                    toCallNodesNext.add(nodeName);
+                    toCallNodesNext.add(node.getName());
                 }
             }
         }
