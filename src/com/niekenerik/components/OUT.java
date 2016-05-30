@@ -2,9 +2,6 @@ package com.niekenerik.components;
 
 import com.niekenerik.interfaces.Node;
 
-import java.util.ArrayList;
-
-
 public class OUT extends Node {
 
     public OUT(String name){

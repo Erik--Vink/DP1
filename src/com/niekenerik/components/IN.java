@@ -1,9 +1,6 @@
 package com.niekenerik.components;
 
 import com.niekenerik.interfaces.Node;
-
-import java.util.ArrayList;
-
 public class IN extends Node {
 
     public IN(String name){

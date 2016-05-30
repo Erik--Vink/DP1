@@ -2,10 +2,8 @@ package com.niekenerik;
 
 import com.niekenerik.interfaces.Node;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 public class Circuit {
 

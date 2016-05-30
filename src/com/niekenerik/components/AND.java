@@ -2,8 +2,6 @@ package com.niekenerik.components;
 
 import com.niekenerik.interfaces.Node;
 
-import java.util.ArrayList;
-
 public class AND extends Node {
 
     private Integer inputA = -1;

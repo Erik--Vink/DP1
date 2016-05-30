@@ -1,9 +1,6 @@
 package com.niekenerik.components;
 
 import com.niekenerik.interfaces.Node;
-
-import java.util.ArrayList;
-
 public class NOT extends Node {
 
     public NOT(String name){

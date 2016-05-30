@@ -11,7 +11,7 @@ public class NodeFactory {
     private static final ServiceLoader<Node> loader;
 
     static {
-        nodes = new HashMap<String, Node>();
+        nodes = new HashMap<>();
         loader = ServiceLoader.load(Node.class);
 
         for (Node node : loader) {

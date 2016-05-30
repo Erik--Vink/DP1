@@ -1,8 +1,8 @@
 package com.niekenerik;
 
 import java.io.*;
-import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class FileReader {
@@ -44,9 +44,7 @@ public class FileReader {
                         String[] part = line.split(":");
                         String[] links = part[1].split(",");
                         ArrayList<String> setLinks = new ArrayList<>();
-                        for(String link : links){
-                            setLinks.add(link);
-                        }
+                        Collections.addAll(setLinks, links);
                         nodeLinks.put(part[0], setLinks);
                     }
                 } else {

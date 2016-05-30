@@ -2,8 +2,6 @@ package com.niekenerik.components;
 
 import com.niekenerik.interfaces.Node;
 
-import java.util.ArrayList;
-
 public class XOR extends Node {
     private Integer inputA = -1;
     private Integer inputB = -1;
