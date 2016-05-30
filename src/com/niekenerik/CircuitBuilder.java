@@ -13,6 +13,7 @@ public class CircuitBuilder {
     private HashMap<String, String> nodesList;
     private HashMap<String, ArrayList<Node>> nodeLinks;
 
+    //initialise variable
     public CircuitBuilder(){
         this.nodes = new HashMap<>();
         this.nodeLinks = new HashMap<>();

@@ -1,7 +1,6 @@
 package com.niekenerik;
 
 import com.niekenerik.interfaces.UiObserver;
-
 import java.util.ArrayList;
 
 public class CircuitController extends Simulatie {
@@ -12,6 +11,7 @@ public class CircuitController extends Simulatie {
     private FileReader fileReader;
     private OutputDrawer outputDrawer;
 
+    //initialise variable
     public CircuitController(){
         circuitBuilder = new CircuitBuilder();
         uiObservers = new ArrayList<>();
@@ -43,7 +43,7 @@ public class CircuitController extends Simulatie {
             this.circuit = circuitBuilder.build();
         } else {
             outputDrawer.drawLine("File kon niet ingelezen worden");
-            play();
+            runSimulation();
         }
     }
 
@@ -66,7 +66,7 @@ public class CircuitController extends Simulatie {
         outputDrawer.drawLine("De simulatie is afgelopen");
         outputDrawer.drawLine("Wilt u opnieuw een simulatie starten: (y/n)");
         if(inputReader.readInput().equals("y")){
-            play();
+            runSimulation();
         }
     }
 }

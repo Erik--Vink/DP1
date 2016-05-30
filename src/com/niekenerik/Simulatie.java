@@ -7,7 +7,7 @@ public abstract class Simulatie {
     abstract void finishSimulation();
 
     //template method
-    public void play(){
+    public void runSimulation(){
 
         setupSimulation();
 
