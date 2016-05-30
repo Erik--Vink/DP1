@@ -26,7 +26,7 @@ public class CircuitController extends Simulatie {
 
     private void notifyAllObservers(){
         for(UiObserver observer: uiObservers){
-            observer.update(circuit.getNodes());
+            observer.update(circuit.getDrawData());
         }
     }
 

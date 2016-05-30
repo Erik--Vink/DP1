@@ -4,6 +4,7 @@ import com.niekenerik.interfaces.Node;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Circuit {
 
@@ -52,7 +53,24 @@ public class Circuit {
 
     }
 
-    public HashMap<String, Node> getNodes() {
-        return nodes;
+    public HashMap<Node, ArrayList<String>>getDrawData(){
+
+        HashMap<Node, ArrayList<String>> drawData = new HashMap<>();
+
+        for(Map.Entry<String, Node> entry : this.nodes.entrySet()) {
+            String nodeKey = entry.getKey();
+            Node nodeValue = entry.getValue();
+            ArrayList<String> linkedNodes = new ArrayList<>();
+
+            if(this.nodeLinks.containsKey(nodeKey)){
+                for(Node linkedNode: this.nodeLinks.get(nodeKey)){
+                    linkedNodes.add(linkedNode.getName());
+                }
+            }
+
+            drawData.put(nodeValue,linkedNodes);
+        }
+
+        return drawData;
     }
 }
