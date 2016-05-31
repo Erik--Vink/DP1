@@ -18,7 +18,7 @@ public abstract class Node {
         return output;
     }
 
-    public void setOutput(Integer output) {
+    protected void setOutput(Integer output) {
         this.output = output;
     }
 
