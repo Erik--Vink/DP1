@@ -27,8 +27,13 @@ public class Circuit {
 
         for(String nodeName : toCallNodes){
             Integer value = nodes.get(nodeName).getOutput();
+
             for(Node node: nodeLinks.get(nodeName)){
-                if(node.calculate(value) > -1){
+                //if this node is not the OUT node and has no links, throw an error.
+                if(!nodeLinks.containsKey(node.getName()) && (!nodes.get(node.getName()).getType().equals("OUT"))){
+                    throw new SimulationError("Simulation failed, unconnected pins.");
+                }
+                else if(node.calculate(value) > -1){
                     toCallNodesNext.add(node.getName());
                 }else {
                     if(node.getType().equals("OUT")){
@@ -36,6 +41,7 @@ public class Circuit {
                     }
                 }
             }
+
         }
 
         toCallNodes = toCallNodesNext;
@@ -45,7 +51,7 @@ public class Circuit {
             if(endNodeCalled){
                 return true;
             }else {
-                throw new SimulationError("Simulation failed");
+                throw new SimulationError("Simulation failed, node mismatch.");
             }
         } else {
             return false;

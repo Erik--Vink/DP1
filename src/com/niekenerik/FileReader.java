@@ -10,11 +10,6 @@ public class FileReader {
     private HashMap<String, String> nodes;
     private HashMap<String, ArrayList<String>> nodeLinks;
 
-    public FileReader(){
-        nodes = new HashMap<>();
-        nodeLinks = new HashMap<>();
-    }
-
     public HashMap<String, String> getNodes() {
         return nodes;
     }
@@ -24,6 +19,8 @@ public class FileReader {
     }
 
     public Boolean readFile(String naam){
+        nodes = new HashMap<>();
+        nodeLinks = new HashMap<>();
         boolean node = false;
         boolean nodeLink = false;
         InputStream fis =  FileReader.class.getResourceAsStream("testFiles/" + naam);

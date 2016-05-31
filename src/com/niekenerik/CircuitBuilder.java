@@ -13,12 +13,6 @@ public class CircuitBuilder {
     private HashMap<String, String> nodesList;
     private HashMap<String, ArrayList<Node>> nodeLinks;
 
-    //initialise variable
-    public CircuitBuilder(){
-        this.nodes = new HashMap<>();
-        this.nodeLinks = new HashMap<>();
-    }
-
     public void addNodes(HashMap<String, String> nodes){
         this.nodesList = nodes;
     }
@@ -28,6 +22,8 @@ public class CircuitBuilder {
     }
 
     public Circuit build(){
+        this.nodes = new HashMap<>();
+        this.nodeLinks = new HashMap<>();
         //Roep factory create method aan voor iedere node in nodeList
         ArrayList<String> toCallNodes = new ArrayList<>();
 
