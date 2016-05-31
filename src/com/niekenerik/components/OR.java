@@ -43,4 +43,9 @@ public class OR extends Node {
     public Node copy(String name) {
         return new OR(name);
     }
+
+    @Override
+    public String getInput() {
+        return inputA.toString() + ", " + inputB.toString();
+    }
 }

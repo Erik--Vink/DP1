@@ -36,9 +36,13 @@ public class NOR extends Node {
         return getOutput();
     }
 
-
     @Override
     public Node copy(String name) {
         return new NOR(name);
+    }
+
+    @Override
+    public String getInput() {
+        return inputA.toString() + ", " + inputB.toString();
     }
 }

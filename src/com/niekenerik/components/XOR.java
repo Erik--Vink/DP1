@@ -36,9 +36,13 @@ public class XOR extends Node {
         return getOutput();
     }
 
-
     @Override
     public Node copy(String name) {
         return new XOR(name);
+    }
+
+    @Override
+    public String getInput() {
+        return inputA.toString() + ", " + inputB.toString();
     }
 }

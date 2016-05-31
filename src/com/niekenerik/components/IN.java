@@ -21,4 +21,9 @@ public class IN extends Node {
     public Node copy(String name) {
         return new IN(name);
     }
+
+    @Override
+    public String getInput() {
+        return getOutput().toString();
+    }
 }

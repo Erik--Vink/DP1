@@ -8,6 +8,7 @@ public abstract class Node {
 
     public abstract Integer calculate(int input);
     public abstract Node copy(String name);
+    public abstract String getInput();
 
     public Node(String name, String type){
         this.name = name;

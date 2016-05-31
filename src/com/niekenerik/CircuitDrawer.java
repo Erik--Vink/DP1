@@ -30,7 +30,7 @@ public class CircuitDrawer implements UiObserver {
             ArrayList<String> nodeLinks = entry.getValue();
 
             System.out.println("Name: " + node.getName());
-            System.out.println("Input: TODO" );
+            System.out.println("Input: " + node.getInput());
             System.out.println("Type: " + node.getType());
             System.out.println("Output: " + node.getOutput());
             String nextNodes = "";

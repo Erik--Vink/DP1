@@ -42,4 +42,9 @@ public class NAND extends Node {
     public Node copy(String name) {
         return new NAND(name);
     }
+
+    @Override
+    public String getInput() {
+        return inputA.toString() + ", " + inputB.toString();
+    }
 }

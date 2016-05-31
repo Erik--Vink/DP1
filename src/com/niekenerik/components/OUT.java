@@ -4,6 +4,8 @@ import com.niekenerik.interfaces.Node;
 
 public class OUT extends Node {
 
+    private Integer input = -1;
+
     public OUT(String name){
         super(name, "OUT");
     }
@@ -15,6 +17,7 @@ public class OUT extends Node {
 
     @Override
     public Integer calculate(int input) {
+        this.input = input;
         setOutput(input);
         return -1;
     }
@@ -22,5 +25,10 @@ public class OUT extends Node {
     @Override
     public Node copy(String name) {
         return new OUT(name);
+    }
+
+    @Override
+    public String getInput() {
+        return input.toString();
     }
 }

@@ -40,4 +40,9 @@ public class AND extends Node {
     public Node copy(String name) {
         return new AND(name);
     }
+
+    @Override
+    public String getInput() {
+        return inputA.toString() + ", " +  inputB.toString();
+    }
 }
