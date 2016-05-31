@@ -1,5 +1,6 @@
 package com.niekenerik;
 
+import com.niekenerik.interfaces.IWritter;
 import com.niekenerik.interfaces.UiObserver;
 import java.util.ArrayList;
 
@@ -9,7 +10,7 @@ public class CircuitController extends Simulatie {
     private ArrayList<UiObserver> uiObservers;
     private InputReader inputReader;
     private FileReader fileReader;
-    private OutputDrawer outputDrawer;
+    private IWritter writter;
 
     //initialise variable
     public CircuitController(){
@@ -17,7 +18,7 @@ public class CircuitController extends Simulatie {
         uiObservers = new ArrayList<>();
         inputReader = new InputReader();
         fileReader = new FileReader();
-        outputDrawer = new OutputDrawer();
+        writter = new LineWritter();
     }
 
     private void attach(UiObserver observer){
@@ -32,9 +33,12 @@ public class CircuitController extends Simulatie {
 
     @Override
     void setupSimulation() {
-        outputDrawer.drawLine("Welkom bij dp1 eind opdracht");
-        outputDrawer.drawLine("Selecteer het circuit");
-        outputDrawer.drawList(fileReader.getFileNames("testFiles"));
+        writter = new LineWritter();
+        writter.showMessage("Welkom bij dp1 eind opdracht");
+        writter.showMessage("Selecteer het circuit");
+        for(String line : fileReader.getFileNames("testFiles")){
+            writter.showMessage(line);
+        }
         if(fileReader.readFile(inputReader.readInput())){
             circuitBuilder.addNodes(fileReader.getNodes());
             circuitBuilder.addNodeLinks(fileReader.getNodeLinks());
@@ -42,7 +46,7 @@ public class CircuitController extends Simulatie {
             attach(new CircuitDrawer());
             this.circuit = circuitBuilder.build();
         } else {
-            outputDrawer.drawLine("File kon niet ingelezen worden");
+            writter.showMessage("File kon niet ingelezen worden");
             runSimulation();
         }
     }
@@ -54,7 +58,8 @@ public class CircuitController extends Simulatie {
             try {
                 done = circuit.callNodes();
             } catch (SimulationError simulationError) {
-                outputDrawer.printError(simulationError.getMessage());
+                writter = new ErrorWriter();
+                writter.showMessage(simulationError.getMessage());
                 break;
             }
             notifyAllObservers();
@@ -63,8 +68,9 @@ public class CircuitController extends Simulatie {
 
     @Override
     void finishSimulation() {
-        outputDrawer.drawLine("De simulatie is afgelopen");
-        outputDrawer.drawLine("Wilt u opnieuw een simulatie starten: (y/n)");
+        writter = new LineWritter();
+        writter.showMessage("De simulatie is afgelopen");
+        writter.showMessage("Wilt u opnieuw een simulatie starten: (y/n)");
         if(inputReader.readInput().equals("y")){
             runSimulation();
         }
