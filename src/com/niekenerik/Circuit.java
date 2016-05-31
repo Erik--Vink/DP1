@@ -53,6 +53,18 @@ public class Circuit {
 
     }
 
+    public ArrayList<String> getToCallNodes() {
+        return toCallNodes;
+    }
+
+    public void setStartValues(HashMap<String, Integer> startValues){
+        for(Map.Entry<String, Integer> entry : startValues.entrySet()) {
+            String nodeName = entry.getKey();
+            Integer startValue = entry.getValue();
+            this.nodes.get(nodeName).calculate(startValue);
+        }
+    }
+
     public HashMap<Node, ArrayList<String>>getDrawData(){
 
         HashMap<Node, ArrayList<String>> drawData = new HashMap<>();
