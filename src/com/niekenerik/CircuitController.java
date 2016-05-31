@@ -80,16 +80,18 @@ public class CircuitController extends Simulatie {
 
     @Override
     void startSimulation() {
-        Boolean done = false;
-        while(!done){
-            try {
+        try {
+            circuit.validateCircuit();
+
+            Boolean done = false;
+            while(!done){
                 done = circuit.callNodes();
-            } catch (SimulationError simulationError) {
-                writter = new ErrorWriter();
-                writter.showMessage(simulationError.getMessage());
-                break;
+                notifyAllObservers();
             }
-            notifyAllObservers();
+
+        } catch (SimulationError simulationError) {
+            writter = new ErrorWriter();
+            writter.showMessage(simulationError.getMessage());
         }
     }
 

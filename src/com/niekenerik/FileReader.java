@@ -58,6 +58,10 @@ public class FileReader {
 
                 }
             }
+
+            //Valideer de aangemaakte nodes en links
+
+
         } catch (Exception e) {
             return false;
         }

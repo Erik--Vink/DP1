@@ -65,6 +65,15 @@ public class Circuit {
         }
     }
 
+    public void validateCircuit() throws SimulationError{
+        try{
+            callNodes();
+        }
+        catch(SimulationError e){
+            throw e;
+        }
+    }
+
     public HashMap<Node, ArrayList<String>>getDrawData(){
 
         HashMap<Node, ArrayList<String>> drawData = new HashMap<>();
