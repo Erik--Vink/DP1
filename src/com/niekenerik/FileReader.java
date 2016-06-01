@@ -19,6 +19,9 @@ public class FileReader {
     }
 
     public Boolean readFile(String naam){
+
+        nodes = new HashMap<>();
+        nodeLinks = new HashMap<>();
         nodes = new HashMap<>();
         nodeLinks = new HashMap<>();
         boolean node = false;

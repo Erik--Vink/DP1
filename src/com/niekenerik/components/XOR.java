@@ -27,7 +27,7 @@ public class XOR extends Node {
             return -1;
         }
 
-        if(inputA  != inputB  && (inputA + inputB) == -1){
+        if((inputA + inputB) == 1  ){
             setOutput(1);
         } else {
             setOutput(0);
